@@ -26,7 +26,41 @@ cd kiro-dev
 ## Workflow
 
 ```
-sk.story → sk.verify → sk.impact → sk.plan → sk.breakdown → sk.implement
+┌─────────────────────────────────────────────────────────────────────┐
+│                      STORY-DRIVEN DEVELOPMENT                       │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+│ sk.story │───▶│sk.verify │───▶│sk.impact │───▶│ sk.plan  │
+│          │    │          │    │          │    │          │
+│ Create   │    │ Clarify  │    │ Analyze  │    │ Design   │
+│ Epic     │    │ Require- │    │ Codebase │    │ Solution │
+│          │    │ ments    │    │ Impact   │    │          │
+└──────────┘    └──────────┘    └──────────┘    └────┬─────┘
+                                                     │
+                    ┌────────────────────────────────┘
+                    ▼
+              ┌───────────┐    ┌─────────────┐
+              │sk.breakdown│───▶│sk.implement │
+              │           │    │             │
+              │ Break into│    │ Execute     │
+              │ Tasks     │    │ Tasks       │
+              └───────────┘    └─────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ OUTPUT STRUCTURE                                                    │
+├─────────────────────────────────────────────────────────────────────┤
+│  .stories/                                                          │
+│  └── epics/                                                         │
+│      └── feature-name/                                              │
+│          ├── story.md      ◀── sk.story                             │
+│          ├── verify.md     ◀── sk.verify                            │
+│          ├── impact.md     ◀── sk.impact                            │
+│          ├── plan.md       ◀── sk.plan                              │
+│          └── stories/                                               │
+│              └── sub-story/                                         │
+│                  └── tasks.md  ◀── sk.breakdown + sk.implement      │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 | Command | Description |
